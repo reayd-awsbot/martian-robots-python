@@ -63,14 +63,154 @@ LLFFFLFLFL
 3 3 N LOST
 2 3 S
 ```
+
+## Requirements
+- **Python** 3.10.12 (exact)  
+- No other runtime dependencies beyond the standard library
+
+For development & testing you’ll also need: `pytest`, `pylint`, `black` (see dev dependencies in `pyproject.toml`).
+
+## Installation
+
+1. **Clone** the repository  
+```bash
+git clone https://github.com/your-username/martian-robots-python.git
+cd martian-robots-python
+````
+
+2. **Install** via [Poetry](https://python-poetry.org):
+
+```bash
+poetry install
+```
+
+*(Alternatively, you can create a virtualenv and `pip install .`.)*
+
+
+
+## Testing
+
+Run **unit** and **functional** tests with pytest:
+
+```bash
+poetry run pytest
+```
+
+* Marker-based tests:
+
+  * `@pytest.mark.unit` for isolated logic
+  * `@pytest.mark.functional` for end-to-end scenarios
+* Coverage report:
+
+```bash
+poetry run pytest --cov
+```
+
+Dev linting & formatting:
+
+```bash
+poetry run pylint martian_robots
+poetry run black --check .
+```
+
+## Project Structure
+
+```
+    .
+    ├── pyproject.toml      # project config & dependencies :contentReference[oaicite:4]{index=4}
+    ├── README.md           # this document
+    ├── src/
+    │   └── martian_robots/ # core package
+    │       ├── __main__.py
+    │       ├── grid.py
+    │       └── robot.py
+    └── tests/
+        ├── unit/
+        └── functional/
+```
+You can surface all of the handy shortcuts in your README by adding a “Makefile” section. For example, right after your **Usage** section you might insert:
+
+
+## Makefile
+
+A `Makefile` is provided to simplify common workflows:
+
+- **install**: Install the project’s Poetry environment  
+    ```bash
+    make install
+    ```
+
+* **test**: Run all pytest tests with coverage and clear the cache
+
+    ```bash
+    make test
+    ```
+
+* **lint**: Run `pylint` across the codebase
+
+    ```bash
+    make lint
+    ```
+
+* **black**: Auto-format all code with Black
+
+    ```bash
+    make black
+    ```
+
+* **check-black**: Verify code formatting without making changes
+
+    ```bash
+    make check-black
+    ```
+
+* **checkin**: Format, test, then commit & push (prompts for a commit message)
+
+    ```bash
+    make checkin
+    ```
+
+* **run**: Execute the Martian Robots CLI on the sample fixture
+
+    ```bash
+    make run
+    ```
+
+## GitHub Configuration
+
+This project includes a set of GitHub configuration files and workflows under the `.github/` directory to automate dependency updates, enforce code quality, and streamline collaboration.
+
+### Dependabot
+
+- **`.github/dependabot.yml`**  
+  Configures Dependabot to check for updates to your Python dependencies on a regular schedule and open automated pull requests when new versions are available.
+
+### Pull Request Template
+
+- **`.github/pull_request-template.md`**  
+  Provides a standardized template for contributors to fill out when opening a pull request, ensuring each PR includes a description of changes, related issues, testing notes, and any other relevant context.
+
+### GitHub Actions Workflows
+
+All workflows live in `.github/workflows/` and run on `push` and `pull_request` events by default.
+
+| Workflow File     | Purpose                                                                               |
+|-------------------|---------------------------------------------------------------------------------------|
+| `auto-assign.yaml`| Automatically assigns reviewers or teams to new pull requests based on code ownership or labels. |
+| `branch.yaml`     | Enforces branch naming conventions and triggers branch-protection checks on new branches or PRs. |
+| `linting.yml`     | Runs code linters (`black`, `pylint`) on changed files to ensure style and quality standards are met. |
+| `tests.yml`       | Executes the full test suite (`pytest`, coverage) and reports results in the PR status checks. |
+
+These configurations help maintain code quality, keep dependencies up to date, and make collaboration smoother and more consistent across the team.  
+
 ## References
-* https://github.com/neilkennedy/coding-challenge-martian-robots?utm_source=chatgpt.com
-* https://joneaves.wordpress.com/2014/07/21/toy-robot-coding-test/?utm_source=chatgpt.com
-* https://www.jpl.nasa.gov/edu/resources/lesson-plan/mars-sample-return-coding-challenge/?utm_source=chatgpt.com
-* https://gitlab.doc.ic.ac.uk/ryd23/martian-robots?utm_source=chatgpt.com
-* https://ece.ncsu.edu/2023/throwbackthursday-ece-alum-cracks-the-mars-rover-code/?utm_source=chatgpt.com
-* https://amanagrawal.blog/2020/06/28/mars-rover-programming-kata-using-dddtddports-and-adapters/?utm_source=chatgpt.com
+* https://github.com/neilkennedy/coding-challenge-martian-robots
+* https://joneaves.wordpress.com/2014/07/21/toy-robot-coding-test/
+* https://www.jpl.nasa.gov/edu/resources/lesson-plan/mars-sample-return-coding-challenge/
+* https://gitlab.doc.ic.ac.uk/ryd23/martian-robots
+* https://ece.ncsu.edu/2023/throwbackthursday-ece-alum-cracks-the-mars-rover-code/
+* https://amanagrawal.blog/2020/06/28/mars-rover-programming-kata-using-dddtddports-and-adapters/
 * https://www.youtube.com/watch?v=QAaDUlhJocQ
-* https://code.google.com/archive/p/marsrovertechchallenge/?utm_source=chatgpt.com
-* https://education.vex.com/stemlabs/123/mars-rover-landing-challenge/unit-overview/background?utm_source=chatgpt.com
-* https://fr.vittascience.com/public/content/user_data/resources/Martian_robot_booklet_ST.pdf?utm_source=chatgpt.com
+* https://code.google.com/archive/p/marsrovertechchallenge/
+* https://education.vex.com/stemlabs/123/mars-rover-landing-challenge/unit-overview/background
+* https://fr.vittascience.com/public/content/user_data/resources/Martian_robot_booklet_ST.pdf
