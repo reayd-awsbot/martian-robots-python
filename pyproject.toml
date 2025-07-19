@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "martian-robots-python"
+version = "0.1.0"
+description = ""
+authors = ["David Reay"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "==3.10.12"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-env = "^1.1.5"
+pytest-cov = "^6.2.1"
+pylint = "^3.3.7"
+black = "^25.1.0"
+
+[tool.pytest.ini_options]
+log_cli = false
+log_cli_level = 0
+filterwarnings = [
+    "ignore::DeprecationWarning"
+]
+markers = [
+    "functional",
+    "unit"
+]
+
+[tool.coverage.run]
+source = [
+    "*/src/*.py"
+]
+
+omit = [
+    "*/tests/*",
+    "*/utils/*",
+    "*conftest.py*",
+    "*setup.py*",
+    "*__init__.py*"
+]
