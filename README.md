@@ -203,6 +203,40 @@ All workflows live in `.github/workflows/` and run on `push` and `pull_request` 
 
 These configurations help maintain code quality, keep dependencies up to date, and make collaboration smoother and more consistent across the team.  
 
+## Use of Generative AI
+This project was developed with the assistance of Generative AI tools (e.g., ChatGPT) for tasks such as scaffolding boilerplate code, generating function templates, and improving documentation clarity.
+
+Generative AI is not used to replace critical thinking or design, but to accelerate development and allow more time to focus on higher-value work, such as:
+
+✅ Improving test coverage
+Time saved writing simple structures is reinvested in thoughtful, robust testing.
+
+⚙️ Automating GitHub workflows
+I focus on CI/CD, branch protections, and lint/test pipelines that ensure long-term project health.
+
+🔍 Improving readability and documentation
+AI can suggest better naming, docstrings, and prose, which I then tailor for accuracy and tone.
+
+🧠 Quickly exploring design alternatives
+I can evaluate different implementations rapidly and choose the cleanest, most maintainable one.
+
+📐 Standardizing project layout
+Helps ensure consistency across modules, scripts, and tests—even in small, short-lived repos.
+
+🔄 Refactoring or understanding unfamiliar code
+AI assistance accelerates reading, simplifying, or reworking legacy codebases.
+
+🧪 Bootstrapping reproducible environments
+With AI-generated Makefiles, dependency files, and setup scripts, I can ensure a consistent dev setup for collaborators.
+
+🚀 Writing simple programs quickly
+For small, well-defined tasks—like this challenge—Generative AI significantly reduces the overhead of starting from scratch.
+
+🧰 Starting new projects efficiently
+AI helps scaffold clean starting points for new repositories, leaving more time for problem-solving and polish.
+
+All AI-generated outputs are reviewed, adapted, and refined before being included. Using AI in this way increases delivery speed without compromising quality or intentionality.
+
 ## References
 * https://github.com/neilkennedy/coding-challenge-martian-robots
 * https://joneaves.wordpress.com/2014/07/21/toy-robot-coding-test/
